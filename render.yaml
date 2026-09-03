@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: faci-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLW_SECRET_KEY
+        sync: false
+      - key: FLW_PUBLIC_KEY
+        sync: false
+      - key: CURRENCY
+        value: NGN
